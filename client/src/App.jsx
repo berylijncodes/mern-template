@@ -3,7 +3,7 @@ import React from 'react'
 const App = () => {
   return (
     <div>
-      Mern stack application!
+      Mern stack Application!
     </div>
   )
 }
