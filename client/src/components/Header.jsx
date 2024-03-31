@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <nav className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
-            <img src='../public/logos/logo-dark.svg' alt='logo' width={170} height={50} />
+            <img src='/logos/logo-dark.svg' alt='logo' width={170} height={50} />
         </Link>
         <form className='p-3 rounded-lg flex items-center border border-current'>
             <input type='text' placeholder='search for anything' className='focus:outline-none w-24 sm:w-64' />
