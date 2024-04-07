@@ -15,7 +15,7 @@ const App = () => {
 
 const AppContent = () => {
   const location = useLocation();
-  const isSignUpPage = location.pathname === '/sign-up';
+  const isSignUpPage = location.pathname === '/sign-up' || 'sign-in';
 
   return (
     <>
