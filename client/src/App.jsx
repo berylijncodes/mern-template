@@ -15,11 +15,12 @@ const App = () => {
 
 const AppContent = () => {
   const location = useLocation();
-  const isSignUpPage = location.pathname === '/sign-up' || 'sign-in';
+  // const isSignUpPage = location.pathname === '/sign-up' || 'sign-in';
 
   return (
     <>
-      {!isSignUpPage && <Header />}
+      {/* {!isSignUpPage && <Header />} */}
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
