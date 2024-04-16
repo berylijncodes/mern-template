@@ -35,12 +35,12 @@ const OAuth = () => {
     }
   };
   return (
-    <div className="flex gap-4 w-full border p-3 rounded-lg items-center justify-center">
+    <div className="flex gap-4 w-full border p-3 pl-28 rounded-lg items-center cursor-pointer hover:opacity-75">
       <img src="/assets/icons/google.svg" alt="hand" width={30} height={30} />
       <button
         onClick={handleGoogleClick}
         type="button"
-        className="text-black hover:opacity-95"
+        className="text-black ml-4 uppercase"
       >
         Continue with Google
       </button>
