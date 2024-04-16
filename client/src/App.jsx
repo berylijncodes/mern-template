@@ -1,9 +1,11 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './pages/Home';
-import About from './pages/About';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import Profile from "./pages/Profile";
+import PrivateRoute from "./components/PrivateRoute";
 
 const App = () => {
   return (
@@ -14,7 +16,7 @@ const App = () => {
 };
 
 const AppContent = () => {
-  const location = useLocation();
+  // const location = useLocation();
   // const isSignUpPage = location.pathname === '/sign-up' || 'sign-in';
 
   return (
@@ -22,10 +24,13 @@ const AppContent = () => {
       {/* {!isSignUpPage && <Header />} */}
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='/sign-up' element={<SignUp />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
     </>
   );
