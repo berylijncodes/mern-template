@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 import { errorHandler } from "../utils/error.js";
 
-import User from "../models/user.js";
+import User from "../models/userModel.js";
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
@@ -68,6 +68,15 @@ export const google = async (req, res, next) => {
         .status(200)
         .json(rest);
     }
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const signout = async (req, res, next) => {
+  try {
+    res.clearCookie("access_token");
+    res.status(200).json("User has been logged out!");
   } catch (error) {
     next(error);
   }
