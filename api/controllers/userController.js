@@ -1,7 +1,7 @@
 import bcryptjs from "bcryptjs";
 import User from "../models/userModel.js";
 import { errorHandler } from "../utils/error.js";
-// import Listing from "../models/listing.model.js";
+import Listing from "../models/listingModel.js";
 
 export const test = (req, res) => {
   res.json({
@@ -63,16 +63,16 @@ export const getUserListings = async (req, res, next) => {
   }
 };
 
-// export const getUser = async (req, res, next) => {
-//   try {
-//     const user = await User.findById(req.params.id);
+export const getUser = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
 
-//     if (!user) return next(errorHandler(404, "User not found!"));
+    if (!user) return next(errorHandler(404, "User not found!"));
 
-//     const { password: pass, ...rest } = user._doc;
+    const { password: pass, ...rest } = user._doc;
 
-//     res.status(200).json(rest);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+    res.status(200).json(rest);
+  } catch (error) {
+    next(error);
+  }
+};
